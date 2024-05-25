@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {ButtonCheckout} from "./ButtonCheckout";
+import {ButtonCheckout} from "../Style/ButtonCheckout";
 
 const Overlay = styled.div`
     position: fixed;

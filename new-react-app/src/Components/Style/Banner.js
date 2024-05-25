@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bannerImg from "../image/banner-burger.jpeg"
+import bannerImg from "../../image/banner-burger.jpeg"
 
 export const Banner = styled.div`
     width: 100%;
