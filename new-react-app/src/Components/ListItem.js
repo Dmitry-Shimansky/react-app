@@ -20,6 +20,8 @@ const Item = styled.li`
     font-size: 30px;
     color: white;
     z-index: 1;
+    transition-property: box-shdow, opacity;
+    transition-duration: 0.5s;
     &:after {
         content: '';
         position: absolute;
