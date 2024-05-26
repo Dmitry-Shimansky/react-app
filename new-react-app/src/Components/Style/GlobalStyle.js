@@ -52,6 +52,15 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     input, button {
-        font-family: inherit;
+        font: inherit;
+    }
+    
+    input[typre='number'] {
+        -moz-appearance: textfield;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
     }
 `;
