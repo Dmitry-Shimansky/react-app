@@ -4,6 +4,7 @@ import {ButtonCheckout} from "../Style/ButtonCheckout";
 import {CountItem} from "./CountItem";
 import {useCount} from "../Hooks/useCount";
 import {formatCurrency} from "../Functions/secondaryFunction";
+import {totalPriceItems} from "../Functions/secondaryFunction";
 
 const Overlay = styled.div`
     position: fixed;
@@ -52,8 +53,6 @@ const TotalPriceItem = styled.div`
     display: flex;
     justify-content: space-between;
 `;
-
-export const totalPriceItems = (order) => order.price * order.count;
 
 export const ModalItem = ({openItem, setOpenItem, orders, setOrders}) => {
 

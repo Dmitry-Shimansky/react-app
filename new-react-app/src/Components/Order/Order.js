@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {ButtonCheckout} from "../Style/ButtonCheckout";
 import {OrderListItem} from "./OrderListItem";
-import {totalPriceItems} from "../Modal/ModalItem";
+import {totalPriceItems} from "../Functions/secondaryFunction";
 import {formatCurrency} from "../Functions/secondaryFunction";
 
 const OrderStyled = styled.section`
