@@ -11,7 +11,6 @@ const OrderItemStyled = styled.li`
 
 const ItemName = styled.span`
     flex-grow: 1;
-    
 `;
 
 const ItemPrice = styled.span`
@@ -33,11 +32,22 @@ const TrashButton = styled.button`
     cursor: pointer;
 `;
 
-export const OrderListItem = ({order}) => (
-    <OrderItemStyled>
-        <ItemName>{order.name}</ItemName>
-        <span>{order.count}</span>
-        <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
-        <TrashButton/>
-    </OrderItemStyled>
-);
+const Toppings = styled.p`
+`;
+
+export const OrderListItem = ({order}) => {
+
+    const checkedToppings =  order.topping.filter(item => item.checked);
+
+    return (
+        <>
+            <OrderItemStyled>
+                <ItemName>{order.name}</ItemName>
+                <span>{order.count}</span>
+                <ItemPrice>{formatCurrency(totalPriceItems(order))}</ItemPrice>
+                <TrashButton/>
+            </OrderItemStyled>
+            <Toppings>{checkedToppings.map(item => item.name)}</Toppings>
+        </>
+    )
+};

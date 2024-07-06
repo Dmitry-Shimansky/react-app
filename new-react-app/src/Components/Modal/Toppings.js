@@ -5,7 +5,7 @@ const ToppingWrap = styled.div`
     max-width: 500px;
     margin: 0 auto;
     column-count: 2;
-    column-gap: 5px;
+    column-gap: 15px;
 `;
 
 const ToppingLabel = styled.label`

@@ -1,5 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
 import React from "react";
 import {GlobalStyle} from "./Components/Style/GlobalStyle";
 import {NavBar} from "./Components/NavBar/NavBar";
