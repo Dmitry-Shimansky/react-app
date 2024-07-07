@@ -11,6 +11,7 @@ const OrderItemStyled = styled.li`
 
 const ItemName = styled.span`
     flex-grow: 1;
+    cursor: pointer
 `;
 
 const ItemPrice = styled.span`
@@ -29,7 +30,7 @@ const TrashButton = styled.button`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    cursor: pointer;
+    cursor: pointer
 `;
 
 const Toppings = styled.p`

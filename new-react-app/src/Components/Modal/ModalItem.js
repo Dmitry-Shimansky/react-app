@@ -9,7 +9,6 @@ import {Toppings} from "./Toppings";
 import {Choices} from "./Choices";
 import {useToppings} from "../Hooks/useToppings";
 import {useChoices} from "../Hooks/useChoices";
-import generateUniqueID from "generate-unique-id"
 
 const Overlay = styled.div`
     position: fixed;
@@ -76,8 +75,7 @@ export const ModalItem = ({openItem, setOpenItem, orders, setOrders}) => {
         ...openItem,
         count: counter.count,
         topping: toppings.toppings,
-        choice: choices.choice,
-        uid: generateUniqueID(),
+        choice: choices.choice
     };
 
     const addToOrder = () => {
