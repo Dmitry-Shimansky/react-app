@@ -32,7 +32,7 @@ function App() {
       <>
           <GlobalStyle/>
           <NavBar {...authentic}/>
-          <Order {...orders} {...openItem}/>
+          <Order {...orders} {...openItem} {...authentic}/>
           <Menu {...openItem}/>
           {openItem.openItem && <ModalItem {...openItem} {...orders}/>}
       </>
