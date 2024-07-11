@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {ButtonCheckout} from "../Style/ButtonCheckout";
 import {OrderListItem} from "./OrderListItem";
-import {totalPriceItems} from "../Functions/secondaryFunction";
-import {formatCurrency} from "../Functions/secondaryFunction";
+import {totalPriceItems, formatCurrency, projection} from "../Functions/secondaryFunction";
 
 const OrderStyled = styled.section`
     position: fixed;
@@ -47,7 +46,17 @@ const EmptyList = styled.p`
     text-align: center;
 `;
 
-export const Order = ({orders, setOrders, setOpenItem, authentication, logIn}) => {
+const rulesData = {
+    name: ['name'],
+    price: ['price'],
+    count: ['count'],
+    topping: ['topping', item => item.filter(obj => obj.checked).map(obj => obj.name),
+    arr => arr.length ? arr : 'no toppings'],
+    choice: ['choice', item => item ? item : 'no choices'],
+}
+
+export const Order = ({orders, setOrders, setOpenItem, authentication, logIn, firebaseDatabase}) => {
+    const dataBase = firebaseDatabase();
 
     const deleteItem = index => {
         const newOrders = [...orders];
@@ -56,9 +65,16 @@ export const Order = ({orders, setOrders, setOpenItem, authentication, logIn}) =
     };
 
     const total = orders.reduce((result, order) => totalPriceItems(order) + result, 0);
-
     const totalCounter = orders.reduce((result, order) => order.count + result, 0);
-    const orderCheckout = () => console.log(orders);
+    const sendOrders = () => {
+        const newOrder = orders.map(projection(rulesData));
+        dataBase.ref('orders').push().set({
+            nameClient: authentication.displayName,
+            email: authentication.email,
+            order: newOrder
+        }).catch((err) => console.error('Error ', err));
+        // console.log(dataBase.ref('orders').push().set({order: newOrder}));
+    };
 
     return (
         <OrderStyled>
@@ -82,7 +98,7 @@ export const Order = ({orders, setOrders, setOpenItem, authentication, logIn}) =
                 <span>{totalCounter}</span>
                 <TotalPrice>{formatCurrency(total)}</TotalPrice>
             </Total>
-            <ButtonCheckout onClick={authentication ? orderCheckout : logIn}>Оформить</ButtonCheckout>
+            <ButtonCheckout onClick={authentication ? sendOrders : logIn}>Оформить</ButtonCheckout>
         </OrderStyled>
     )
 }
