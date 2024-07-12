@@ -14,6 +14,7 @@ import {useAuth} from "./Components/Hooks/useAuth";
 const firebaseConfig = {
     apiKey: "AIzaSyApefLj1Mda6A7rBV0coS-H8nfmkuBeAbg",
     authDomain: "mydonalds-ef6f5.firebaseapp.com",
+    databaseURL: "https://mydonalds-ef6f5-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "mydonalds-ef6f5",
     storageBucket: "mydonalds-ef6f5.appspot.com",
     messagingSenderId: "481170689661",
