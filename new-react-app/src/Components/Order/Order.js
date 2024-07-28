@@ -72,8 +72,8 @@ export const Order = ({orders, setOrders, setOpenItem, authentication, logIn, fi
             nameClient: authentication.displayName,
             email: authentication.email,
             order: newOrder
-        }).catch((err) => console.error('Error ', err));
-        // console.log(dataBase.ref('orders').push().set({order: newOrder}));
+        }).then(setOrders([]))
+            .catch((err) => console.error('Error ', err));
     };
 
     return (
