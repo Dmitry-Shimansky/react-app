@@ -73,7 +73,7 @@ export const Order = ({orders, setOrders, setOpenItem, authentication, logIn, fi
             email: authentication.email,
             order: newOrder
         }).then(setOrders([]))
-            .catch((err) => console.error('Error ', err));
+            .catch((err) => console.error('Error ', err.message));
     };
 
     return (
