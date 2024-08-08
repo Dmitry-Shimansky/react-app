@@ -5,7 +5,7 @@ export const useFetch = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
+        (async () => {
             try {
                 const json = await fetch('db.json');
                 const res = await json.json();
@@ -13,8 +13,7 @@ export const useFetch = () => {
             } catch (err) {
                 setError(err);
             }
-        };
-        fetchData();
+        })();
     }, []);
     return {response, error};
 }

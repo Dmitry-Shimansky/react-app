@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {ListItem} from "./ListItem";
 import {Banner} from "./Banner";
 import {useFetch} from "../Hooks/useFetch";
+import preloader from "../../image/Spinner.svg"
 
 const MenuStyled = styled.main`
     background-color: #ccc;
@@ -13,6 +14,20 @@ const MenuStyled = styled.main`
 
 const SectionMenu = styled.section`
     padding: 30px;
+`;
+
+const PreloaderWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+`;
+
+const PreloaderImg = styled.img`
+    width: 200px;
+    height: 200px;
 `;
 
 export const Menu = ({ setOpenItem }) => {
@@ -41,7 +56,10 @@ export const Menu = ({ setOpenItem }) => {
                         />
                     </SectionMenu>
                 </> : res.error ? <div>Sorry, we will fix it soon</div> :
-                <div>Loading...</div>
+                <PreloaderWrapper>
+                    <PreloaderImg src={preloader} alt="Preloader"/>
+                </PreloaderWrapper>
+                // <div>Loading...</div>
             }
         </MenuStyled>
     )
