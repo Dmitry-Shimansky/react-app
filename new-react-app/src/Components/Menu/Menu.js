@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 // import dbMenu from "../DBMenu";
 import {ListItem} from "./ListItem";
 import {Banner} from "./Banner";
 import {useFetch} from "../Hooks/useFetch";
 import preloader from "../../image/Spinner.svg"
+import {Context} from "../Functions/context";
 
 const MenuStyled = styled.main`
     background-color: #ccc;
@@ -30,11 +31,12 @@ const PreloaderImg = styled.img`
     height: 200px;
 `;
 
-export const Menu = ({ setOpenItem }) => {
+export const Menu = () => {
 
+    const {openItem: {setOpenItem}} = useContext(Context);
     const res = useFetch();
     const dbMenu = res.response;
-    console.log('useFetch', useFetch());
+    // console.log('useFetch', useFetch());
 
     return (
         <MenuStyled>
