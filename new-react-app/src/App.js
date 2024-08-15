@@ -34,27 +34,17 @@ function App() {
     const openItem = useOpenItem();
     const orders = useOrders();
     const orderConfirm = useOrderConfirm();
+    const firebaseDatabase = firebase.database;
     useTitle(openItem.openItem);
 
     return (
-      <Context.Provider value={{authentic, openItem, orders, orderConfirm}}>
+      <Context.Provider value={{authentic, openItem, orders, orderConfirm, firebaseDatabase}}>
           <GlobalStyle/>
-          <NavBar/>
-          <Order
-              {...orders}
-              {...openItem}
-              {...authentic}
-              {...orderConfirm}
-          />
+          <NavBar />
+          <Order />
           <Menu/>
-          {openItem.openItem && <ModalItem {...openItem} {...orders}/>}
-          {orderConfirm.openOrderConfirm && <OrderConfirm
-              {...orders}
-              {...openItem}
-              {...authentic}
-              firebaseDatabase={firebase.database}
-              {...orderConfirm}
-          />}
+          {openItem.openItem && <ModalItem />}
+          {orderConfirm.openOrderConfirm && <OrderConfirm />}
       </Context.Provider>
   );
 }
