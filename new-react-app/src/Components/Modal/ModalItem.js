@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
 import {ButtonCheckout} from "../Style/ButtonCheckout";
+import {Overlay} from "../Style/OverlayStyle";
 import {CountItem} from "./CountItem";
 import {useCount} from "../Hooks/useCount";
 import {formatCurrency} from "../Functions/secondaryFunction";
@@ -10,19 +11,6 @@ import {Choices} from "./Choices";
 import {useToppings} from "../Hooks/useToppings";
 import {useChoices} from "../Hooks/useChoices";
 import {Context} from "../Functions/context";
-
-export const Overlay = styled.div`
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 20;
-`;
 
 const Modal = styled.div`
     background-color: #fff;

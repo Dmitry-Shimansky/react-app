@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
 import {ButtonCheckout} from "../Style/ButtonCheckout";
+import {OrderTitle, Total, TotalPrice} from "../Style/OverlayStyle";
 import {OrderListItem} from "./OrderListItem";
 import {totalPriceItems, formatCurrency} from "../Functions/secondaryFunction";
 import {Context} from "../Functions/context";
@@ -18,30 +19,11 @@ const OrderStyled = styled.section`
     padding: 20px;
 `;
 
-export const OrderTitle = styled.h2`
-    text-align: center;
-    margin-bottom: 30px;
-`;
-
 const OrderContent = styled.div`
     flex-grow: 1;
 `;
 
 const OrderList = styled.ul``;
-
-export const Total = styled.div`
-    display: flex;
-    margin: 0 35px 30px;
-    & span:first-child {
-        flex-grow: 1;
-    }
-`;
-
-export const TotalPrice = styled.span`
-    text-align: right;
-    min-width: 65px;
-    margin-left: 20px;
-`;
 
 const EmptyList = styled.p`
     text-align: center;
