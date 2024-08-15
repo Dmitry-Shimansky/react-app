@@ -1,7 +1,8 @@
-import React, {useRef} from "react";
+import React, {useRef, useContext} from "react";
 import styled from "styled-components";
 import trashImage from "../../image/trash.svg"
 import {totalPriceItems, formatCurrency} from "../Functions/secondaryFunction";
+import {Context} from "../Functions/context";
 
 const OrderItemStyled = styled.li`
     display: flex;
@@ -38,10 +39,10 @@ const Toppings = styled.p`
     font-size: 14px;
 `;
 
-export const OrderListItem = ({order, deleteItem, index, setOpenItem}) => {
+export const OrderListItem = ({order, deleteItem, index}) => {
 
+    const {openItem: {setOpenItem}} = useContext(Context);
     const checkedToppings =  order.topping.filter(item => item.checked).map(item => item.name).join(', ');
-
     const refDeleteButton = useRef(null);
 
     return (

@@ -33,7 +33,6 @@ export const Order = () => {
 
     const {
         authentic: {authentication, logIn},
-        openItem: {setOpenItem},
         orderConfirm: {setOpenOrderConfirm},
         orders: {orders, setOrders}
     } = useContext(Context);
@@ -58,18 +57,29 @@ export const Order = () => {
                             order={order}
                             deleteItem={deleteItem}
                             index={index}
-                            setOpenItem={setOpenItem}
                         />)}
                     </OrderList> :
                     <EmptyList>Список заказов пуст</EmptyList>
                 }
             </OrderContent>
-            <Total>
-                <span>Итого</span>
-                <span>{totalCounter}</span>
-                <TotalPrice>{formatCurrency(total)}</TotalPrice>
-            </Total>
-            <ButtonCheckout onClick={() => {if (authentication) {setOpenOrderConfirm(true)} else {logIn()}}}>Оформить</ButtonCheckout>
+            {orders.length ?
+                <>
+                <Total>
+                    <span>Итого</span>
+                    <span>{totalCounter}</span>
+                    <TotalPrice>{formatCurrency(total)}</TotalPrice>
+                </Total>
+            </> : null}
+            <ButtonCheckout
+                onClick={() => {
+                    if (authentication) {
+                        setOpenOrderConfirm(true)
+                    } else {
+                        logIn()
+                    }
+                }}
+                disabled={orders.length === 0}
+            >Оформить</ButtonCheckout>
         </OrderStyled>
     )
 }

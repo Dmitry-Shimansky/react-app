@@ -34,11 +34,15 @@ function App() {
     const openItem = useOpenItem();
     const orders = useOrders();
     const orderConfirm = useOrderConfirm();
-    const firebaseDatabase = firebase.database;
     useTitle(openItem.openItem);
 
     return (
-      <Context.Provider value={{authentic, openItem, orders, orderConfirm, firebaseDatabase}}>
+      <Context.Provider value={{
+          authentic,
+          openItem, orders,
+          orderConfirm,
+          firebaseDatabase: firebase.database
+      }}>
           <GlobalStyle/>
           <NavBar />
           <Order />
