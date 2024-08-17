@@ -4,7 +4,6 @@ export function useAuth(authFirebase) {
     const [authentication, setAuthentication] = useState(null);
 
     const auth = authFirebase();
-
     const provider = new authFirebase.GoogleAuthProvider();
 
     const logIn = () => auth.signInWithPopup(provider).catch((err) => console.error(err.message));
