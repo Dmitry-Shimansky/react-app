@@ -7,7 +7,7 @@ export const useFetch = () => {
     useEffect(() => {
         (async () => {
             try {
-                const json = await fetch('db.json');
+                const json = await fetch('DB.json');
                 const res = await json.json();
                 setResponse(res);
             } catch (err) {

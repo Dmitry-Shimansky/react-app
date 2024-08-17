@@ -34,7 +34,6 @@ export const Menu = () => {
 
     const res = useFetch();
     const dbMenu = res.response;
-    // console.log('useFetch', useFetch());
 
     return (
         <MenuStyled>
