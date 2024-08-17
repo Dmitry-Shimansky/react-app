@@ -15,17 +15,6 @@ import {OrderConfirm} from "./Components/Order/OrderConfirm";
 import {useOrderConfirm} from "./Components/Hooks/useOrderConfirm";
 import {Context} from "./Components/Functions/context";
 
-//Config for shimansky.dmitry account
-// const firebaseConfig = {
-//     apiKey: "AIzaSyApefLj1Mda6A7rBV0coS-H8nfmkuBeAbg",
-//     authDomain: "mydonalds-ef6f5.firebaseapp.com",
-//     databaseURL: "https://mydonalds-ef6f5-default-rtdb.europe-west1.firebasedatabase.app",
-//     projectId: "mydonalds-ef6f5",
-//     storageBucket: "mydonalds-ef6f5.appspot.com",
-//     messagingSenderId: "481170689661",
-//     appId: "1:481170689661:web:a9ae7987e65b76e43a6b14"
-// };
-
 const firebaseConfig = {
     apiKey: "AIzaSyCI9Ohdoh290tNTxHChxtSGn2RiRK4sCiw",
     authDomain: "mrdonalds-c85c1.firebaseapp.com",
