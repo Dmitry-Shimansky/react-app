@@ -17,18 +17,21 @@ const SectionMenu = styled.section`
 `;
 
 const PreloaderWrapper = styled.div`
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: purple;
+    background-image: url(${preloader});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fff;
 `;
 
-const PreloaderImg = styled.img`
-    width: 200px;
-    height: 200px;
-`;
+// const PreloaderImg = styled.img`
+//     width: 200px;
+//     height: 200px;
+// `;
 
 export const Menu = () => {
 
@@ -53,9 +56,7 @@ export const Menu = () => {
                         />
                     </SectionMenu>
                 </> : res.error ? <div>Sorry, we will fix it soon</div> :
-                <PreloaderWrapper>
-                    <PreloaderImg src={preloader} alt="Preloader"/>
-                </PreloaderWrapper>
+                <PreloaderWrapper/>
                 // <div>Loading...</div>
             }
         </MenuStyled>

@@ -16,13 +16,13 @@ import {useOrderConfirm} from "./Components/Hooks/useOrderConfirm";
 import {Context} from "./Components/Functions/context";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCI9Ohdoh290tNTxHChxtSGn2RiRK4sCiw",
-    authDomain: "mrdonalds-c85c1.firebaseapp.com",
-    databaseURL: "https://mrdonalds-c85c1-default-rtdb.firebaseio.com",
-    projectId: "mrdonalds-c85c1",
-    storageBucket: "mrdonalds-c85c1.appspot.com",
-    messagingSenderId: "547047690365",
-    appId: "1:547047690365:web:7a7374ea849fd828506114"
+    apiKey: "AIzaSyBX07TkQg5cypNNsvm4S8haBH_8n4BvF4w",
+    authDomain: "mcdonalds-73102.firebaseapp.com",
+    databaseURL: "https://mcdonalds-73102-default-rtdb.firebaseio.com",
+    projectId: "mcdonalds-73102",
+    storageBucket: "mcdonalds-73102.appspot.com",
+    messagingSenderId: "386909580464",
+    appId: "1:386909580464:web:0d24f0b61f853ece755f75"
 };
 
 // Initialize Firebase
