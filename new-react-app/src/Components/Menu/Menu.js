@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {ListItem} from "./ListItem";
 import {Banner} from "./Banner";
 import {useFetch} from "../Hooks/useFetch";
-import preloader from "../../image/Spinner.svg"
+import preloader from "../../image/Spinner.svg";
 
 const MenuStyled = styled.main`
     background-color: #ccc;
@@ -25,13 +25,8 @@ const PreloaderWrapper = styled.div`
     background-image: url(${preloader});
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #fff;
+    background-color: #ccc;
 `;
-
-// const PreloaderImg = styled.img`
-//     width: 200px;
-//     height: 200px;
-// `;
 
 export const Menu = () => {
 
