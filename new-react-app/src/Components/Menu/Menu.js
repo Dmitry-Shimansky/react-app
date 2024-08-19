@@ -5,6 +5,7 @@ import {ListItem} from "./ListItem";
 import {Banner} from "./Banner";
 import {useFetch} from "../Hooks/useFetch";
 import preloader from "../../image/Spinner.svg";
+import sww from "../../image/somethingwentwrong.png";
 
 const MenuStyled = styled.main`
     background-color: #ccc;
@@ -16,7 +17,7 @@ const SectionMenu = styled.section`
     padding: 30px;
 `;
 
-const PreloaderWrapper = styled.div`
+const Preloader = styled.div`
     width: 100%;
     height: 100vh;
     display: flex;
@@ -26,6 +27,19 @@ const PreloaderWrapper = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-color: #ccc;
+`;
+
+const OopsImgWrapper = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+`;
+
+const OopsImg = styled.img`
+    
 `;
 
 export const Menu = () => {
@@ -50,9 +64,11 @@ export const Menu = () => {
                             itemList={dbMenu.other}
                         />
                     </SectionMenu>
-                </> : res.error ? <div>Sorry, we will fix it soon</div> :
-                <PreloaderWrapper/>
-                // <div>Loading...</div>
+                </> : res.error ?
+                    <OopsImgWrapper>
+                        <OopsImg src={sww} alt="OOPS!"/>
+                    </OopsImgWrapper> :
+                <Preloader/>
             }
         </MenuStyled>
     )
