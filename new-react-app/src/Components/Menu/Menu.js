@@ -19,7 +19,7 @@ const SectionMenu = styled.section`
 
 const Preloader = styled.div`
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 280px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,7 @@ const Preloader = styled.div`
 
 const OopsImgWrapper = styled.div`
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 280px);
     display: flex;
     justify-content: center;
     align-items: center;
