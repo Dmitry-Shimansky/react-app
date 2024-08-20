@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 // import dbMenu from "../DBMenu";
 import {ListItem} from "./ListItem";
 import {Banner} from "./Banner";
-import {useFetch} from "../Hooks/useFetch";
+// import {useFetch} from "../Hooks/useFetch";
 import preloader from "../../image/Spinner.svg";
 import sww from "../../image/somethingwentwrong.png";
+import {Context} from "../Functions/context";
 
 const MenuStyled = styled.main`
     background-color: #ccc;
@@ -44,13 +45,14 @@ const OopsImg = styled.img`
 
 export const Menu = () => {
 
-    const res = useFetch();
-    const dbMenu = res.response;
+    const {dbMenu} = useContext(Context);
+    // const res = useFetch();
+    // const dbMenu = res.response;
 
     return (
         <MenuStyled>
             <Banner/>
-            {res.response ?
+            {dbMenu ?
                 <>
                     <SectionMenu>
                         <h2>Бургеры</h2>
@@ -64,10 +66,11 @@ export const Menu = () => {
                             itemList={dbMenu.other}
                         />
                     </SectionMenu>
-                </> : res.error ?
-                    <OopsImgWrapper>
-                        <OopsImg src={sww} alt="OOPS!"/>
-                    </OopsImgWrapper> :
+                </> :
+                // res.error ?
+                //     <OopsImgWrapper>
+                //         <OopsImg src={sww} alt="OOPS!"/>
+                //     </OopsImgWrapper> :
                 <Preloader/>
             }
         </MenuStyled>

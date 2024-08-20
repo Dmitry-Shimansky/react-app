@@ -14,6 +14,7 @@ import {useTitle} from "./Components/Hooks/useTitle";
 import {OrderConfirm} from "./Components/Order/OrderConfirm";
 import {useOrderConfirm} from "./Components/Hooks/useOrderConfirm";
 import {Context} from "./Components/Functions/context";
+import {useDB} from "./Components/Hooks/useDB"
 
 const firebaseConfig = {
     apiKey: "AIzaSyBX07TkQg5cypNNsvm4S8haBH_8n4BvF4w",
@@ -34,14 +35,17 @@ function App() {
     const openItem = useOpenItem();
     const orders = useOrders();
     const orderConfirm = useOrderConfirm();
+    const firebaseDatabase = firebase.database;
     useTitle(openItem.openItem);
+    const dbMenu = useDB(firebaseDatabase());
 
     return (
       <Context.Provider value={{
           authentic,
           openItem, orders,
           orderConfirm,
-          firebaseDatabase: firebase.database
+          firebaseDatabase,
+          dbMenu
       }}>
           <GlobalStyle/>
           <NavBar />
