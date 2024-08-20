@@ -7,9 +7,14 @@ export const useFetch = () => {
     useEffect(() => {
         (async () => {
             try {
-                const json = await fetch('DB.json');
-                const res = await json.json();
-                setResponse(res);
+                setTimeout(async () => {
+                    const json = await fetch('DB.json');
+                    const res = await json.json();
+                    setResponse(res);
+                }, 5000);
+                // const json = await fetch('DB.json');
+                // const res = await json.json();
+                // setResponse(res);
             } catch (err) {
                 setError(err);
             }
