@@ -15,6 +15,8 @@ import {OrderConfirm} from "./Components/Order/OrderConfirm";
 import {useOrderConfirm} from "./Components/Hooks/useOrderConfirm";
 import {Context} from "./Components/Functions/context";
 import {useDB} from "./Components/Hooks/useDB"
+import {useThanksMessage} from "./Components/Hooks/useThanksMessage";
+import {OrderGratitudeMessage} from "./Components/Order/OrderGratitudeMessage";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBX07TkQg5cypNNsvm4S8haBH_8n4BvF4w",
@@ -38,6 +40,7 @@ function App() {
     const firebaseDatabase = firebase.database;
     useTitle(openItem.openItem);
     const dbMenu = useDB(firebaseDatabase());
+    const thanksMessage = useThanksMessage();
 
     return (
       <Context.Provider value={{
@@ -45,7 +48,8 @@ function App() {
           openItem, orders,
           orderConfirm,
           firebaseDatabase,
-          dbMenu
+          dbMenu,
+          thanksMessage
       }}>
           <GlobalStyle/>
           <NavBar />
@@ -53,6 +57,7 @@ function App() {
           <Menu/>
           {openItem.openItem && <ModalItem />}
           {orderConfirm.openOrderConfirm && <OrderConfirm />}
+          {thanksMessage.thanksMessage && <OrderGratitudeMessage />}
       </Context.Provider>
   );
 }

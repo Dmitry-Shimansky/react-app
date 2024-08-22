@@ -40,14 +40,21 @@ export const OrderConfirm = () => {
         orders: {orders, setOrders},
         authentic: {authentication},
         orderConfirm: {setOpenOrderConfirm},
-        firebaseDatabase
+        firebaseDatabase,
+        thanksMessage: {setThanksMessage}
     } = useContext(Context);
 
     const dataBase = firebaseDatabase();
     const total = orders.reduce((result, order) => totalPriceItems(order) + result, 0);
 
+    const closeModal = (e) => {
+        if (e.target.id === 'overlay') {
+            setOpenOrderConfirm(false);
+        }
+    }
+
     return (
-        <Overlay>
+        <Overlay id="overlay" onClick={closeModal}>
             <Modal>
                 <OrderTitle>{authentication.displayName}</OrderTitle>
                 <Text>Осталось подтвердить заказ</Text>
@@ -59,6 +66,7 @@ export const OrderConfirm = () => {
                     sendOrders(dataBase, orders, authentication, setOrders);
                     setOrders([]);
                     setOpenOrderConfirm(false);
+                    setThanksMessage(true);
                 }}>Подтвердить</ButtonCheckout>
             </Modal>
         </Overlay>
