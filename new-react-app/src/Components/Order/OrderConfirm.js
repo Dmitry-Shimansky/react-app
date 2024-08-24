@@ -41,7 +41,7 @@ export const OrderConfirm = () => {
         authentic: {authentication},
         orderConfirm: {setOpenOrderConfirm},
         firebaseDatabase,
-        thanksMessage: {setThanksMessage}
+        thanksMessage: {thanksMessageDelay}
     } = useContext(Context);
 
     const dataBase = firebaseDatabase();
@@ -66,7 +66,7 @@ export const OrderConfirm = () => {
                     sendOrders(dataBase, orders, authentication, setOrders);
                     setOrders([]);
                     setOpenOrderConfirm(false);
-                    setThanksMessage(true);
+                    thanksMessageDelay(true);
                 }}>Подтвердить</ButtonCheckout>
             </Modal>
         </Overlay>
