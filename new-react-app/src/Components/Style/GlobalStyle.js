@@ -13,11 +13,13 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     body {
-        margin: 0;
+        //margin: 0;
         background-color: #f0f0f0;
         font-family: Roboto, sans-serif;
         font-size: 20px;
         color: black;
+        max-width: 1920px;
+        margin: auto;
     }
     
     img {

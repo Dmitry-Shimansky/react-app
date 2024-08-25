@@ -11,7 +11,6 @@ const OrderStyled = styled.section`
     display: flex;
     flex-direction: column;
     top: 80px;
-    left: 0;
     background-color: #fff;
     width: 380px;
     height: calc(100% - 80px);

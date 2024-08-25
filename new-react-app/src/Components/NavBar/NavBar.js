@@ -4,12 +4,12 @@ import logoImg from "../../image/logo.svg"
 import signInImg from "../../image/sign.svg"
 import {Context} from "../Functions/context";
 
-const NavBarStyled = styled.header`
+const NavBarStyled = styled.nav`
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 999;
+    z-index: 2;
     height: 80px;
+    max-width: 1920px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -32,7 +32,7 @@ const ImgLogo = styled.img`
 `;
 const Login = styled.button`
     font-family: Pacifico, sans-serif;
-    font-size: 1rem;
+    font-size: 24px;
     font-weight: 400;
     line-height: 160%;
     color: #fff;
