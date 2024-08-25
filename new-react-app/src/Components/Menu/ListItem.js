@@ -22,8 +22,8 @@ const Item = styled.li`
     font-size: 30px;
     color: white;
     z-index: 1;
-    transition-property: box-shdow, opacity;
-    transition-duration: 0.5s;
+    border-radius: 5px;
+    transition: scale 0.5s, box-shadow 1s;
     &:after {
         content: '';
         position: absolute;
@@ -34,6 +34,7 @@ const Item = styled.li`
         background-color: black;
         opacity: 50%;
         z-index: -1;
+        border-radius: 5px;
     }
     &:hover {
         cursor: pointer;
@@ -41,6 +42,7 @@ const Item = styled.li`
         &:after {
             opacity: 0
         }
+        scale: 120%;
     }
 `;
 
