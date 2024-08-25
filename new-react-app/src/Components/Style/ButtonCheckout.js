@@ -10,6 +10,7 @@ export const ButtonCheckout = styled.button`
     background-color: #299B01;
     color: #fff;
     border-color: transparent;
+    border-radius: 10px;
     cursor: pointer;
     transition-property: color, background-color, border-color;
     transition-duration: 0.3s;

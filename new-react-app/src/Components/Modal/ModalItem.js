@@ -16,6 +16,8 @@ const Modal = styled.div`
     background-color: #fff;
     width: 600px;
     height: 600px;
+    box-shadow: 0 0 5px 10px rgba(46, 204, 113, 0.2);
+    border-radius: 10px;
 `;
 
 const Banner = styled.div`
@@ -24,6 +26,8 @@ const Banner = styled.div`
     background-image: url(${({img}) => img});
     background-size: cover;
     background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 `;
 
 const Content = styled.section`
@@ -45,6 +49,12 @@ const HeaderContent = styled.div`
 const TotalPriceItem = styled.div`
     display: flex;
     justify-content: space-between;
+`;
+
+const SeparateLine = styled.hr`
+    color: black;
+    width: 100%;
+    height: 1px;
 `;
 
 export const ModalItem = () => {
@@ -94,8 +104,10 @@ export const ModalItem = () => {
                         <div>{formatCurrency(openItem.price)}</div>
                     </HeaderContent>
                     <CountItem {...counter}/>
+                    <SeparateLine/>
                     {openItem.toppings && <Toppings{...toppings}/>}
                     {openItem.choices && <Choices {...choices} openItem={openItem} />}
+                    <SeparateLine/>
                     <TotalPriceItem>
                         <span>Цена:</span>
                         <span>{formatCurrency(totalPriceItems(order))}</span>
